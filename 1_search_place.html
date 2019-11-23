@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Make a Reservation</h1>
+
+<h3>Search Available Turfs</h3>
+
+<h4><small>Page 1 out of 2</small></h4>
+
+<table class="table table-striped">
+    <h3>Available Turf Locations</i></h3>
+    <tr>
+        <th>City</th>
+        <th>Locations</th>
+    </tr>
+    {% for key,value in loc.items() %}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{", ".join(value)}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+  {% from "includes/_formhelpers.html" import render_field %}
+
+  <form method="POST" action="">
+    <div class="form-group">
+      {{render_field(form.city, class_="form-control")}}
+    </div>
+    <div class="form-group">
+      {{render_field(form.name, class_="form-control")}}
+    </div>
+    <div class="form-group">
+      {{render_field(form.entrytime, class_="form-control")}}
+    </div>
+    <div class="form-group">
+      {{render_field(form.exittime, class_="form-control")}}
+    </div>
+    <p><input type="submit" class="btn btn-primary" value="Next"></p>
+  </form>
+
+{% endblock %}
+
+

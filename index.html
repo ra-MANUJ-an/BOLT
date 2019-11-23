@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>First Page</title>
-</head>
-<body>
-	<h2>Main Application</h2>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>MyBooking</h1>
+    <a href="/register" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-user"></span> Register</a>
+    <a href="/login" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+  </div>
+{% endblock %}
